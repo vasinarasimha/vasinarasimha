@@ -1,0 +1,141 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 840 400" width="840" height="400">
+<defs>
+  <linearGradient id="about-bg-grad" x1="0" y1="0" x2="840" y2="400" gradientUnits="userSpaceOnUse">
+    <stop offset="0%" stop-color="#070b16"/>
+    <stop offset="100%" stop-color="#0c1424"/>
+  </linearGradient>
+  <linearGradient id="about-accent" x1="0" y1="0" x2="1" y2="1">
+    <stop offset="0%" stop-color="#247bff"/>
+    <stop offset="100%" stop-color="#ff354f"/>
+  </linearGradient>
+  <pattern id="about-dots" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse">
+    <circle cx="2" cy="2" r="0.6" fill="#247bff" opacity="0.06"/>
+  </pattern>
+</defs>
+<style>
+  @media (prefers-reduced-motion: reduce) {
+    .about-anim { animation: none !important; }
+    .about-smil { display: none; }
+  }
+  .about-anim { animation-fill-mode: both; }
+  @keyframes about-fadeIn {
+    from { opacity: 0; transform: translateY(16px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+</style>
+
+<!-- Background -->
+<rect width="840" height="400" fill="url(#about-bg-grad)"/>
+<rect width="840" height="400" fill="url(#about-dots)"/>
+
+<!-- Section title -->
+<text x="35" y="48" fill="#e8eaed" font-family="'Segoe UI',system-ui,sans-serif" font-size="28" font-weight="700" class="about-anim" style="animation: about-fadeIn 0.7s ease-out 0s;">About &amp; Life</text>
+<rect x="35" y="58" width="140" height="2.5" rx="1" fill="url(#about-accent)" opacity="0.6"/>
+
+<!-- Capabilities cards - left side with spacious width and comfortable text padding -->
+<g class="about-anim" style="animation: about-fadeIn 0.6s ease-out 0.3s;">
+  <!-- Card 1: Backend -->
+  <rect x="35" y="80" width="255" height="62" rx="12" fill="#0d1525" stroke="#1a2540" stroke-width="1"/>
+  <text x="52" y="103" fill="#247bff" font-family="monospace" font-size="11" font-weight="700">⚡ BACKEND</text>
+  <text x="52" y="120" fill="#8892a4" font-family="'Segoe UI',system-ui,sans-serif" font-size="11">FastAPI · Django · REST · WebSockets</text>
+  <text x="52" y="133" fill="#8892a4" font-family="'Segoe UI',system-ui,sans-serif" font-size="11">50+ APIs developed · 20+ features</text>
+</g>
+
+<g class="about-anim" style="animation: about-fadeIn 0.6s ease-out 0.5s;">
+  <!-- Card 2: Databases -->
+  <rect x="35" y="154" width="255" height="62" rx="12" fill="#0d1525" stroke="#1a2540" stroke-width="1"/>
+  <text x="52" y="177" fill="#247bff" font-family="monospace" font-size="11" font-weight="700">🗄️ DATA</text>
+  <text x="52" y="194" fill="#8892a4" font-family="'Segoe UI',system-ui,sans-serif" font-size="11">PostgreSQL · pgvector · SQLAlchemy</text>
+  <text x="52" y="207" fill="#8892a4" font-family="'Segoe UI',system-ui,sans-serif" font-size="11">10+ tables designed · HNSW indexing</text>
+</g>
+
+<g class="about-anim" style="animation: about-fadeIn 0.6s ease-out 0.7s;">
+  <!-- Card 3: AI -->
+  <rect x="35" y="228" width="255" height="62" rx="12" fill="#0d1525" stroke="#1a2540" stroke-width="1"/>
+  <text x="52" y="251" fill="#ff354f" font-family="monospace" font-size="11" font-weight="700">🤖 AI ENGINEERING</text>
+  <text x="52" y="268" fill="#8892a4" font-family="'Segoe UI',system-ui,sans-serif" font-size="11">RAG · Semantic Search · Transformers</text>
+  <text x="52" y="281" fill="#8892a4" font-family="'Segoe UI',system-ui,sans-serif" font-size="11">85% duplicate reduction · 40% MTTR</text>
+</g>
+
+<g class="about-anim" style="animation: about-fadeIn 0.6s ease-out 0.9s;">
+  <!-- Card 4: DevOps -->
+  <rect x="35" y="302" width="255" height="62" rx="12" fill="#0d1525" stroke="#1a2540" stroke-width="1"/>
+  <text x="52" y="325" fill="#247bff" font-family="monospace" font-size="11" font-weight="700">🔧 INFRASTRUCTURE</text>
+  <text x="52" y="342" fill="#8892a4" font-family="'Segoe UI',system-ui,sans-serif" font-size="11">Docker · CI/CD · Celery · Redis · Git</text>
+  <text x="52" y="355" fill="#8892a4" font-family="'Segoe UI',system-ui,sans-serif" font-size="11">70+ bugs resolved · 25+ PRs merged</text>
+</g>
+
+<!-- Right side: Interests carousel -->
+<g class="about-anim" style="animation: about-fadeIn 0.6s ease-out 0.4s;">
+  <!-- Carousel card -->
+  <rect x="310" y="80" width="490" height="250" rx="16" fill="#0d1525" stroke="#1a2540" stroke-width="1"/>
+  
+  <text x="340" y="112" fill="#8892a4" font-family="monospace" font-size="11" letter-spacing="2">BEYOND THE CODE</text>
+  
+  <!-- Slide 1: Listening to Music -->
+  <g opacity="1">
+    <text x="340" y="155" fill="#e8eaed" font-family="'Segoe UI',system-ui,sans-serif" font-size="22" font-weight="700">🎵 Listening to Music</text>
+    <text x="340" y="185" fill="#8892a4" font-family="'Segoe UI',system-ui,sans-serif" font-size="14">Music fuels my focus during deep coding sessions.</text>
+    <text x="340" y="205" fill="#8892a4" font-family="'Segoe UI',system-ui,sans-serif" font-size="14">From lo-fi beats to energetic playlists — rhythm</text>
+    <text x="340" y="225" fill="#8892a4" font-family="'Segoe UI',system-ui,sans-serif" font-size="14">keeps the creative momentum flowing.</text>
+    <animate attributeName="opacity" values="1;1;0;0;0;1" keyTimes="0;0.30;0.33;0.97;0.98;1" dur="12s" repeatCount="indefinite" class="about-smil"/>
+  </g>
+  
+  <!-- Slide 2: Learning New Technologies -->
+  <g opacity="0">
+    <text x="340" y="155" fill="#e8eaed" font-family="'Segoe UI',system-ui,sans-serif" font-size="22" font-weight="700">🚀 Learning New Tech</text>
+    <text x="340" y="185" fill="#8892a4" font-family="'Segoe UI',system-ui,sans-serif" font-size="14">Always exploring emerging tools and frameworks.</text>
+    <text x="340" y="205" fill="#8892a4" font-family="'Segoe UI',system-ui,sans-serif" font-size="14">From vector databases to AI inference pipelines,</text>
+    <text x="340" y="225" fill="#8892a4" font-family="'Segoe UI',system-ui,sans-serif" font-size="14">staying current is part of my DNA.</text>
+    <animate attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0;0.31;0.34;0.63;0.66;1" dur="12s" repeatCount="indefinite" class="about-smil"/>
+  </g>
+  
+  <!-- Slide 3: Writing Stories -->
+  <g opacity="0">
+    <text x="340" y="155" fill="#e8eaed" font-family="'Segoe UI',system-ui,sans-serif" font-size="22" font-weight="700">✍️ Writing Stories</text>
+    <text x="340" y="185" fill="#8892a4" font-family="'Segoe UI',system-ui,sans-serif" font-size="14">Crafting narratives brings a different kind of joy.</text>
+    <text x="340" y="205" fill="#8892a4" font-family="'Segoe UI',system-ui,sans-serif" font-size="14">Whether it's fiction or technical writing, I love</text>
+    <text x="340" y="225" fill="#8892a4" font-family="'Segoe UI',system-ui,sans-serif" font-size="14">shaping ideas into compelling stories.</text>
+    <animate attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0;0.64;0.67;0.96;0.97;1" dur="12s" repeatCount="indefinite" class="about-smil"/>
+  </g>
+  
+  <!-- Segment progress bars: Sequential progress filling (Tech bar stays full during Stories) -->
+  <g transform="translate(340, 260)">
+    <!-- Bar 1 (MUSIC) -->
+    <rect x="0" y="0" width="130" height="3" rx="1.5" fill="#1a2540"/>
+    <rect x="0" y="0" width="0" height="3" rx="1.5" fill="#247bff" opacity="0.8">
+      <animate attributeName="width" values="0;130;130;0" keyTimes="0;0.30;0.98;1" dur="12s" repeatCount="indefinite" class="about-smil"/>
+    </rect>
+    <!-- Bar 2 (TECH) - Fills during Tech slide, remains full during Stories slide -->
+    <rect x="145" y="0" width="130" height="3" rx="1.5" fill="#1a2540"/>
+    <rect x="145" y="0" width="0" height="3" rx="1.5" fill="#247bff" opacity="0.8">
+      <animate attributeName="width" values="0;0;130;130;0" keyTimes="0;0.33;0.63;0.98;1" dur="12s" repeatCount="indefinite" class="about-smil"/>
+    </rect>
+    <!-- Bar 3 (STORIES) - Fills during Stories slide -->
+    <rect x="290" y="0" width="130" height="3" rx="1.5" fill="#1a2540"/>
+    <rect x="290" y="0" width="0" height="3" rx="1.5" fill="#ff354f" opacity="0.8">
+      <animate attributeName="width" values="0;0;130;130;0" keyTimes="0;0.66;0.96;0.98;1" dur="12s" repeatCount="indefinite" class="about-smil"/>
+    </rect>
+  </g>
+  
+  <!-- Labels under bars with exact centering -->
+  <text x="405" y="284" text-anchor="middle" fill="#8892a4" font-family="monospace" font-size="9">MUSIC</text>
+  <text x="550" y="284" text-anchor="middle" fill="#8892a4" font-family="monospace" font-size="9">TECH</text>
+  <text x="695" y="284" text-anchor="middle" fill="#8892a4" font-family="monospace" font-size="9">STORIES</text>
+</g>
+
+<!-- Bottom metric counters -->
+<g class="about-anim" style="animation: about-fadeIn 0.6s ease-out 1.2s;">
+  <rect x="310" y="345" width="150" height="30" rx="8" fill="#0d1525" stroke="#1a2540" stroke-width="1"/>
+  <text x="385" y="364" text-anchor="middle" fill="#247bff" font-family="monospace" font-size="12" font-weight="700">50+ APIs</text>
+  
+  <rect x="475" y="345" width="150" height="30" rx="8" fill="#0d1525" stroke="#1a2540" stroke-width="1"/>
+  <text x="550" y="364" text-anchor="middle" fill="#ff354f" font-family="monospace" font-size="12" font-weight="700">70+ Bugs Fixed</text>
+
+  <rect x="640" y="345" width="160" height="30" rx="8" fill="#0d1525" stroke="#1a2540" stroke-width="1"/>
+  <text x="720" y="364" text-anchor="middle" fill="#247bff" font-family="monospace" font-size="12" font-weight="700">25+ PRs Merged</text>
+</g>
+
+<!-- Bottom gradient line -->
+<rect x="0" y="397" width="840" height="3" fill="url(#about-accent)" opacity="0.2"/>
+</svg>

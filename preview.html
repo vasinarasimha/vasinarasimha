@@ -1,0 +1,1013 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>vasinarasimha (Lakshmi Narasimha Vasi) - GitHub Profile Preview</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-canvas: #0d1117;
+      --bg-subtle: #161b22;
+      --bg-inset: #010409;
+      --border-default: #30363d;
+      --border-muted: #21262d;
+      --text-primary: #e6edf3;
+      --text-secondary: #8b949e;
+      --accent-blue: #247bff;
+      --accent-crimson: #ff354f;
+      --accent-green: #3fb950;
+      --accent-purple: #a371f7;
+      --link: #58a6ff;
+    }
+
+    [data-theme="dimmed"] {
+      --bg-canvas: #22272e;
+      --bg-subtle: #2d333b;
+      --bg-inset: #1c2128;
+      --border-default: #444c56;
+      --border-muted: #373e47;
+      --text-primary: #adbac7;
+      --text-secondary: #768390;
+    }
+
+    [data-theme="lights-out"] {
+      --bg-canvas: #000000;
+      --bg-subtle: #101216;
+      --bg-inset: #050505;
+      --border-default: #26292e;
+      --border-muted: #1c1e22;
+      --text-primary: #f0f6fc;
+      --text-secondary: #8d96a0;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    
+    body {
+      background: var(--bg-canvas);
+      color: var(--text-primary);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans", Helvetica, Arial, sans-serif;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      padding-bottom: 80px;
+    }
+
+    /* Top Navigation Banner */
+    .top-banner {
+      background: var(--bg-inset);
+      border-bottom: 1px solid var(--border-default);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+    }
+
+    .top-banner-inner {
+      max-width: 1080px;
+      margin: 0 auto;
+      padding: 12px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .brand-section {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .gh-logo {
+      fill: #f0f6fc;
+    }
+
+    .brand-title {
+      font-size: 15px;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .brand-title a {
+      color: var(--text-primary);
+      text-decoration: none;
+    }
+
+    .brand-title a:hover {
+      color: var(--link);
+      text-decoration: underline;
+    }
+
+    .brand-badge {
+      font-size: 11px;
+      background: rgba(36, 123, 255, 0.15);
+      color: #58a6ff;
+      border: 1px solid rgba(36, 123, 255, 0.3);
+      padding: 2px 8px;
+      border-radius: 12px;
+      font-weight: 500;
+      font-family: 'Fira Code', monospace;
+    }
+
+    .actions-bar {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      background: var(--bg-subtle);
+      color: var(--text-primary);
+      border: 1px solid var(--border-default);
+      padding: 6px 12px;
+      border-radius: 6px;
+      font-size: 12px;
+      font-weight: 600;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: all 0.15s ease;
+      text-decoration: none;
+    }
+
+    .btn:hover {
+      background: #21262d;
+      border-color: #8b949e;
+      transform: translateY(-1px);
+    }
+
+    .btn-primary {
+      background: #238636;
+      border-color: rgba(240, 246, 252, 0.1);
+      color: #ffffff;
+    }
+
+    .btn-primary:hover {
+      background: #2ea043;
+    }
+
+    .btn-active {
+      background: rgba(36, 123, 255, 0.2);
+      border-color: #247bff;
+      color: #58a6ff;
+    }
+
+    /* Tabs Header */
+    .view-tabs {
+      display: flex;
+      gap: 4px;
+      background: var(--bg-inset);
+      padding: 4px;
+      border-radius: 8px;
+      border: 1px solid var(--border-muted);
+    }
+
+    .tab-btn {
+      padding: 6px 14px;
+      background: transparent;
+      border: none;
+      color: var(--text-secondary);
+      font-size: 13px;
+      font-weight: 600;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: all 0.15s;
+    }
+
+    .tab-btn:hover {
+      color: var(--text-primary);
+    }
+
+    .tab-btn.active {
+      background: var(--bg-subtle);
+      color: #58a6ff;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.3);
+    }
+
+    /* Main Container */
+    .main-wrap {
+      max-width: 960px;
+      margin: 32px auto 0;
+      padding: 0 20px;
+    }
+
+    /* Profile Header Card */
+    .profile-banner {
+      background: linear-gradient(180deg, rgba(36, 123, 255, 0.08) 0%, rgba(13, 17, 23, 0) 100%);
+      border: 1px solid var(--border-default);
+      border-radius: 12px;
+      padding: 24px;
+      margin-bottom: 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+
+    .profile-meta h2 {
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--text-primary);
+    }
+
+    .profile-meta p {
+      font-size: 13px;
+      color: var(--text-secondary);
+      margin-top: 4px;
+    }
+
+    .quick-stats {
+      display: flex;
+      gap: 16px;
+      font-size: 13px;
+    }
+
+    .quick-stat-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      background: var(--bg-subtle);
+      padding: 8px 16px;
+      border-radius: 8px;
+      border: 1px solid var(--border-muted);
+    }
+
+    .quick-stat-val {
+      font-weight: 700;
+      color: #58a6ff;
+      font-family: 'Fira Code', monospace;
+    }
+
+    .quick-stat-lbl {
+      font-size: 11px;
+      color: var(--text-secondary);
+    }
+
+    /* Markdown Readme Container (Simulates GitHub .markdown-body) */
+    .readme-card {
+      background: var(--bg-canvas);
+      border: 1px solid var(--border-default);
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.3);
+    }
+
+    .readme-header {
+      background: var(--bg-subtle);
+      border-bottom: 1px solid var(--border-default);
+      padding: 12px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--text-primary);
+    }
+
+    .readme-body {
+      padding: 32px 28px;
+    }
+
+    .readme-body img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+      margin: 0 auto;
+      border-radius: 10px;
+    }
+
+    .readme-section-svg {
+      margin-bottom: 18px;
+      transition: transform 0.2s ease;
+    }
+
+    .readme-divider {
+      border: none;
+      border-top: 1px solid var(--border-default);
+      margin: 32px 0;
+    }
+
+    .readme-body h2 {
+      font-size: 20px;
+      font-weight: 600;
+      padding-bottom: 8px;
+      border-bottom: 1px solid var(--border-muted);
+      margin-bottom: 16px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    /* Tables */
+    .gh-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 24px;
+      font-size: 13px;
+    }
+
+    .gh-table th, .gh-table td {
+      padding: 10px 14px;
+      border: 1px solid var(--border-default);
+      text-align: left;
+    }
+
+    .gh-table th {
+      background: var(--bg-subtle);
+      font-weight: 600;
+      color: var(--text-primary);
+    }
+
+    .gh-table tr:nth-child(2n) {
+      background: rgba(255, 255, 255, 0.02);
+    }
+
+    .gh-table a {
+      color: var(--link);
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    .gh-table a:hover {
+      text-decoration: underline;
+    }
+
+    .badges-row {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin: 16px 0;
+    }
+
+    .badge-item {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 16px;
+      border-radius: 6px;
+      font-weight: 600;
+      font-size: 13px;
+      text-decoration: none;
+      transition: transform 0.15s ease;
+    }
+
+    .badge-item:hover {
+      transform: translateY(-2px);
+    }
+
+    .badge-github {
+      background: #181717;
+      color: white;
+      border: 1px solid #30363d;
+    }
+
+    .badge-linkedin {
+      background: #0A66C2;
+      color: white;
+      border: 1px solid rgba(255,255,255,0.2);
+    }
+
+    .readme-footer {
+      text-align: center;
+      color: var(--text-secondary);
+      font-size: 12px;
+      margin-top: 24px;
+      padding-top: 16px;
+      border-top: 1px dashed var(--border-muted);
+    }
+
+    /* Component Inspector View */
+    .inspector-card {
+      background: var(--bg-subtle);
+      border: 1px solid var(--border-default);
+      border-radius: 12px;
+      margin-bottom: 32px;
+      overflow: hidden;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.2);
+    }
+
+    .inspector-header {
+      padding: 14px 20px;
+      background: var(--bg-inset);
+      border-bottom: 1px solid var(--border-default);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .inspector-title {
+      font-size: 14px;
+      font-weight: 600;
+      color: #58a6ff;
+      font-family: 'Fira Code', monospace;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .spec-pills {
+      display: flex;
+      gap: 8px;
+      font-size: 11px;
+    }
+
+    .pill {
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid var(--border-muted);
+      padding: 2px 8px;
+      border-radius: 6px;
+      color: var(--text-secondary);
+      font-family: 'Fira Code', monospace;
+    }
+
+    .pill-pass {
+      background: rgba(63, 185, 80, 0.15);
+      border-color: rgba(63, 185, 80, 0.3);
+      color: #3fb950;
+    }
+
+    .inspector-body {
+      padding: 20px;
+      background: var(--bg-canvas);
+      text-align: center;
+    }
+
+    .inspector-body img {
+      width: 100%;
+      height: auto;
+      display: block;
+      border-radius: 8px;
+      border: 1px solid var(--border-muted);
+      background: #070b16;
+    }
+
+    .inspector-footer {
+      padding: 10px 20px;
+      background: var(--bg-subtle);
+      border-top: 1px solid var(--border-muted);
+      font-size: 12px;
+      color: var(--text-secondary);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    /* Diagnostics Tab */
+    .diag-container {
+      background: var(--bg-subtle);
+      border: 1px solid var(--border-default);
+      border-radius: 12px;
+      padding: 24px;
+    }
+
+    .diag-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 16px;
+      margin-top: 20px;
+    }
+
+    .diag-box {
+      background: var(--bg-inset);
+      border: 1px solid var(--border-muted);
+      border-radius: 8px;
+      padding: 16px;
+    }
+
+    .diag-box h4 {
+      font-size: 13px;
+      font-weight: 600;
+      color: #58a6ff;
+      margin-bottom: 12px;
+      font-family: 'Fira Code', monospace;
+    }
+
+    .check-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-size: 12px;
+      padding: 6px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.05);
+    }
+
+    .check-row:last-child {
+      border-bottom: none;
+    }
+
+    .status-badge {
+      font-size: 11px;
+      font-weight: 600;
+      padding: 2px 6px;
+      border-radius: 4px;
+    }
+
+    .status-badge.pass {
+      background: rgba(63, 185, 80, 0.15);
+      color: #3fb950;
+    }
+
+    .status-badge.fail {
+      background: rgba(248, 81, 73, 0.15);
+      color: #f85149;
+    }
+
+    /* Reduced Motion Simulation */
+    .sim-reduced-motion img {
+      filter: grayscale(0.2);
+    }
+
+    /* Floating Toast */
+    #toast {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      background: #1f6feb;
+      color: white;
+      padding: 10px 18px;
+      border-radius: 8px;
+      font-size: 13px;
+      font-weight: 500;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.4);
+      display: none;
+      z-index: 1000;
+      animation: toastIn 0.2s ease;
+    }
+
+    @keyframes toastIn {
+      from { transform: translateY(20px); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
+    }
+  </style>
+</head>
+<body data-theme="default">
+
+  <!-- Top Sticky Navigation Bar -->
+  <header class="top-banner">
+    <div class="top-banner-inner">
+      <div class="brand-section">
+        <svg class="gh-logo" height="24" viewBox="0 0 16 16" width="24">
+          <path d="M8 0c4.42 0 8 3.58 8 8a8.013 8.013 0 0 1-5.45 7.59c-.4.08-.55-.17-.55-.38 0-.27.01-1.13.01-2.2 0-.75-.25-1.23-.54-1.48 1.78-.2 3.65-.88 3.65-3.95 0-.88-.31-1.59-.82-2.15.08-.2.36-1.02-.08-2.12 0 0-.67-.22-2.2.82-.64-.18-1.32-.27-2-.27-.68 0-1.36.09-2 .27-1.53-1.03-2.2-.82-2.2-.82-.44 1.1-.16 1.92-.08 2.12-.51.56-.82 1.28-.82 2.15 0 3.06 1.86 3.75 3.64 3.95-.23.2-.44.55-.51 1.07-.46.21-1.61.55-2.33-.66-.15-.24-.6-.83-1.23-.82-.67.01-.27.38.01.53.34.19.73.9.82 1.13.16.45.68 1.31 2.69.94 0 .67.01 1.3.01 1.49 0 .21-.15.45-.55.38A7.995 7.995 0 0 1 0 8c0-4.42 3.58-8 8-8Z"></path>
+        </svg>
+        <div class="brand-title">
+          <a href="https://github.com/vasinarasimha" target="_blank">vasinarasimha</a>
+          <span style="color: var(--text-secondary);">/</span>
+          <span>README.md</span>
+          <span class="brand-badge">⚡ Animated SVGs</span>
+        </div>
+      </div>
+
+      <div class="view-tabs">
+        <button class="tab-btn active" onclick="switchView('profile')">🌟 GitHub Readme</button>
+        <button class="tab-btn" onclick="switchView('inspector')">🔬 Component Inspector</button>
+        <button class="tab-btn" onclick="switchView('diagnostics')">✅ Health Checks</button>
+      </div>
+
+      <div class="actions-bar">
+        <button class="btn" onclick="reloadAll()" title="Reload animations">🔄 Reload</button>
+        <button class="btn" id="motion-btn" onclick="toggleReducedMotion()" title="Toggle simulated reduced motion">♿ Motion: ON</button>
+        <button class="btn" onclick="cycleTheme()" title="Switch dark theme variants">🌓 Theme</button>
+        <a class="btn btn-primary" href="github-profile-readme.zip" download>📦 Download ZIP</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="main-wrap">
+
+    <!-- Profile Summary Banner -->
+    <div class="profile-banner">
+      <div class="profile-meta">
+        <h2>Lakshmi Narasimha Vasi</h2>
+        <p>Python Backend Developer | AI Application Engineer • Tadipatri, Andhra Pradesh, India</p>
+      </div>
+      <div class="quick-stats">
+        <div class="quick-stat-item">
+          <span class="quick-stat-val">5</span>
+          <span class="quick-stat-lbl">Animated SVGs</span>
+        </div>
+        <div class="quick-stat-item">
+          <span class="quick-stat-val">0</span>
+          <span class="quick-stat-lbl">Dependencies</span>
+        </div>
+        <div class="quick-stat-item">
+          <span class="quick-stat-val">100%</span>
+          <span class="quick-stat-lbl">GitHub Safe</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- VIEW 1: GITHUB README PROFILE MODE -->
+    <div id="view-profile" class="view-content">
+      <div class="readme-card">
+        <div class="readme-header">
+          <div style="display: flex; align-items: center; gap: 8px;">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor" style="color: var(--text-secondary);">
+              <path d="M2 1.75C2 .784 2.784 0 3.75 0h6.586c.464 0 .909.184 1.237.513l3.914 3.914c.329.328.513.773.513 1.237v9.586A1.75 1.75 0 0 1 14.25 17H3.75A1.75 1.75 0 0 1 2 15.25V1.75Z"></path>
+            </svg>
+            <span>vasinarasimha / README.md</span>
+          </div>
+          <span style="font-size: 11px; color: var(--text-secondary); font-family: monospace;">Previewing rendered GitHub Markdown</span>
+        </div>
+
+        <div class="readme-body">
+          <!-- 1. Hero SVG -->
+          <div class="readme-section-svg">
+            <img src="assets/hero.svg?v=1" alt="Lakshmi Narasimha Vasi - Hero" id="p-hero" />
+          </div>
+
+          <!-- 2. About & Life SVG -->
+          <div class="readme-section-svg">
+            <img src="assets/about-life.svg?v=1" alt="About & Life" id="p-about" />
+          </div>
+
+          <!-- 3. Stack SVG -->
+          <div class="readme-section-svg">
+            <img src="assets/stack.svg?v=1" alt="Tech Stack" id="p-stack" />
+          </div>
+
+          <hr class="readme-divider" />
+
+          <!-- Featured Projects Markdown Table -->
+          <h2>🚀 Featured Projects</h2>
+          <table class="gh-table">
+            <thead>
+              <tr>
+                <th style="width: 20%;">Project</th>
+                <th style="width: 50%;">Description</th>
+                <th style="width: 30%;">Tech Stack</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><a href="https://github.com/vasinarasimha/bugforge" target="_blank">BugForge</a></td>
+                <td>AI-powered defect tracking with semantic search, duplicate detection (85% reduction), and RAG-based resolution recommendations</td>
+                <td><code>Python</code>, <code>FastAPI</code>, <code>PostgreSQL</code>, <code>pgvector</code>, <code>React</code>, <code>Sentence Transformers</code></td>
+              </tr>
+              <tr>
+                <td><a href="https://github.com/vasinarasimha/aihirex" target="_blank">AIHireX</a></td>
+                <td>AI-driven interview platform with resume analysis, knowledge retrieval, sandboxed code execution, and real-time WebSocket communication</td>
+                <td><code>Python</code>, <code>FastAPI</code>, <code>PostgreSQL</code>, <code>pgvector</code>, <code>FastEmbed ONNX</code></td>
+              </tr>
+              <tr>
+                <td><a href="https://github.com/vasinarasimha/trustgraph" target="_blank">TrustGraph</a></td>
+                <td>Employment background verification with async workflows, AES-256-GCM encryption, and fuzzy matching for inconsistency detection</td>
+                <td><code>Python</code>, <code>Django REST Framework</code>, <code>PostgreSQL</code>, <code>Celery</code>, <code>Redis</code>, <code>RapidFuzz</code></td>
+              </tr>
+            </tbody>
+          </table>
+
+          <hr class="readme-divider" />
+
+          <!-- Engineering Highlights Markdown Table -->
+          <h2>📊 Engineering Highlights</h2>
+          <table class="gh-table">
+            <thead>
+              <tr>
+                <th style="width: 65%;">Metric</th>
+                <th style="width: 35%;">Value</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td>REST APIs Developed</td><td><strong>50+</strong></td></tr>
+              <tr><td>Business Features Shipped</td><td><strong>20+</strong></td></tr>
+              <tr><td>Software Defects Resolved</td><td><strong>70+</strong></td></tr>
+              <tr><td>Database Tables Designed</td><td><strong>10+</strong></td></tr>
+              <tr><td>Pull Requests Merged</td><td><strong>25+</strong></td></tr>
+              <tr><td>Duplicate Issue Reduction (BugForge)</td><td><strong style="color: #3fb950;">85%</strong></td></tr>
+              <tr><td>MTTR Improvement (BugForge)</td><td><strong style="color: #3fb950;">40%</strong></td></tr>
+            </tbody>
+          </table>
+
+          <hr class="readme-divider" />
+
+          <!-- 4. ID Dashboard SVG -->
+          <div class="readme-section-svg">
+            <img src="assets/id-dashboard.svg?v=1" alt="Developer ID Dashboard" id="p-id" />
+          </div>
+
+          <!-- 5. Connect SVG -->
+          <div class="readme-section-svg">
+            <img src="assets/connect.svg?v=1" alt="Let's Connect" id="p-connect" />
+          </div>
+
+          <hr class="readme-divider" />
+
+          <!-- Real clickable links in markdown below Connect SVG -->
+          <h2>🤝 Let's Connect</h2>
+          <div class="badges-row">
+            <a href="https://github.com/vasinarasimha" target="_blank" class="badge-item badge-github">
+              <svg height="16" viewBox="0 0 16 16" width="16" fill="currentColor">
+                <path d="M8 0c4.42 0 8 3.58 8 8a8.013 8.013 0 0 1-5.45 7.59c-.4.08-.55-.17-.55-.38 0-.27.01-1.13.01-2.2 0-.75-.25-1.23-.54-1.48 1.78-.2 3.65-.88 3.65-3.95 0-.88-.31-1.59-.82-2.15.08-.2.36-1.02-.08-2.12 0 0-.67-.22-2.2.82-.64-.18-1.32-.27-2-.27-.68 0-1.36.09-2 .27-1.53-1.03-2.2-.82-2.2-.82-.44 1.1-.16 1.92-.08 2.12-.51.56-.82 1.28-.82 2.15 0 3.06 1.86 3.75 3.64 3.95-.23.2-.44.55-.51 1.07-.46.21-1.61.55-2.33-.66-.15-.24-.6-.83-1.23-.82-.67.01-.27.38.01.53.34.19.73.9.82 1.13.16.45.68 1.31 2.69.94 0 .67.01 1.3.01 1.49 0 .21-.15.45-.55.38A7.995 7.995 0 0 1 0 8c0-4.42 3.58-8 8-8Z"></path>
+              </svg>
+              GitHub / vasinarasimha
+            </a>
+            <a href="https://www.linkedin.com/in/lakshmi-narasimha-vasi-a79935258/" target="_blank" class="badge-item badge-linkedin">
+              <svg height="16" viewBox="0 0 24 24" width="16" fill="currentColor">
+                <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+              </svg>
+              LinkedIn / Lakshmi Narasimha Vasi
+            </a>
+          </div>
+
+          <div class="readme-footer">
+            Crafted with precision • Built with CSS + SMIL animations • Zero external dependencies
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- VIEW 2: COMPONENT INSPECTOR -->
+    <div id="view-inspector" class="view-content" style="display: none;">
+      
+      <!-- Time scrubber buttons -->
+      <div style="background: var(--bg-subtle); border: 1px solid var(--border-default); border-radius: 10px; padding: 14px 20px; margin-bottom: 24px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px;">
+        <span style="font-size: 13px; font-weight: 600;">⏱️ Simulation Timestamps:</span>
+        <div style="display: flex; gap: 8px;">
+          <button class="btn" onclick="scrubTimestamp(0)">t = 0s</button>
+          <button class="btn" onclick="scrubTimestamp(2)">t = 2s</button>
+          <button class="btn" onclick="scrubTimestamp(5)">t = 5s</button>
+          <button class="btn" onclick="scrubTimestamp(9)">t = 9s</button>
+          <button class="btn" onclick="scrubTimestamp(13)">t = 13s</button>
+        </div>
+      </div>
+
+      <!-- Card 1: Hero -->
+      <div class="inspector-card">
+        <div class="inspector-header">
+          <div class="inspector-title">01. assets/hero.svg</div>
+          <div class="spec-pills">
+            <span class="pill">840 × 420 px</span>
+            <span class="pill">~138 KB</span>
+            <span class="pill pill-pass">Embedded Portrait</span>
+            <span class="pill">CSS + SMIL</span>
+          </div>
+        </div>
+        <div class="inspector-body">
+          <img src="assets/hero.svg?v=1" id="i-hero" alt="Hero SVG" />
+        </div>
+        <div class="inspector-footer">
+          <span>Typing greeting, name wipe, role carousel, floating tech pills, embedded portrait</span>
+          <a class="btn" href="assets/hero.svg" target="_blank">Open SVG ↗</a>
+        </div>
+      </div>
+
+      <!-- Card 2: About & Life -->
+      <div class="inspector-card">
+        <div class="inspector-header">
+          <div class="inspector-title">02. assets/about-life.svg</div>
+          <div class="spec-pills">
+            <span class="pill">840 × 400 px</span>
+            <span class="pill">~10 KB</span>
+            <span class="pill">3-Slide Carousel</span>
+            <span class="pill">Pure CSS</span>
+          </div>
+        </div>
+        <div class="inspector-body">
+          <img src="assets/about-life.svg?v=1" id="i-about" alt="About & Life SVG" />
+        </div>
+        <div class="inspector-footer">
+          <span>Core backend capabilities (REST APIs, RAG, Databases) + timed interests carousel</span>
+          <a class="btn" href="assets/about-life.svg" target="_blank">Open SVG ↗</a>
+        </div>
+      </div>
+
+      <!-- Card 3: Stack -->
+      <div class="inspector-card">
+        <div class="inspector-header">
+          <div class="inspector-title">03. assets/stack.svg</div>
+          <div class="spec-pills">
+            <span class="pill">840 × 520 px</span>
+            <span class="pill">~13 KB</span>
+            <span class="pill">Orbital SMIL</span>
+            <span class="pill">3 Tilted Ellipses</span>
+          </div>
+        </div>
+        <div class="inspector-body">
+          <img src="assets/stack.svg?v=1" id="i-stack" alt="Tech Stack SVG" />
+        </div>
+        <div class="inspector-footer">
+          <span>Central Python kernel, rotating orbiting tech nodes with glowing halos, tech pills list</span>
+          <a class="btn" href="assets/stack.svg" target="_blank">Open SVG ↗</a>
+        </div>
+      </div>
+
+      <!-- Card 4: ID Dashboard -->
+      <div class="inspector-card">
+        <div class="inspector-header">
+          <div class="inspector-title">04. assets/id-dashboard.svg</div>
+          <div class="spec-pills">
+            <span class="pill">840 × 560 px</span>
+            <span class="pill">~61 KB</span>
+            <span class="pill">Pendulum SMIL</span>
+            <span class="pill pill-pass">Embedded Photo</span>
+          </div>
+        </div>
+        <div class="inspector-body">
+          <img src="assets/id-dashboard.svg?v=1" id="i-id" alt="ID Dashboard SVG" />
+        </div>
+        <div class="inspector-footer">
+          <span>Lanyard drop + bounce + continuous pendulum sway, user badge, barcode, holographic foil</span>
+          <a class="btn" href="assets/id-dashboard.svg" target="_blank">Open SVG ↗</a>
+        </div>
+      </div>
+
+      <!-- Card 5: Connect -->
+      <div class="inspector-card">
+        <div class="inspector-header">
+          <div class="inspector-title">05. assets/connect.svg</div>
+          <div class="spec-pills">
+            <span class="pill">840 × 340 px</span>
+            <span class="pill">~165 KB</span>
+            <span class="pill pill-pass">Pointing Gesture Photo</span>
+            <span class="pill">Live Signal</span>
+          </div>
+        </div>
+        <div class="inspector-body">
+          <img src="assets/connect.svg?v=1" id="i-connect" alt="Connect SVG" />
+        </div>
+        <div class="inspector-footer">
+          <span>Actual pointing photo gesture directing to social cards, pulsing beacon signal</span>
+          <a class="btn" href="assets/connect.svg" target="_blank">Open SVG ↗</a>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- VIEW 3: HEALTH & COMPLIANCE DIAGNOSTICS -->
+    <div id="view-diagnostics" class="view-content" style="display: none;">
+      <div class="diag-container">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+          <h3 style="font-size: 16px; font-weight: 700;">GitHub SVG Compliance Diagnostics</h3>
+          <button class="btn btn-primary" onclick="runAutomatedAudit()">⚡ Re-run Audit</button>
+        </div>
+        <p style="font-size: 13px; color: var(--text-secondary);">
+          Verifies that every SVG conforms to GitHub's image sanitization pipeline requirements (safe CSS/SMIL, no JS, zero external network requests, prefers-reduced-motion support, valid base64 data URIs).
+        </p>
+
+        <div class="diag-grid" id="audit-grid">
+          <div style="grid-column: 1 / -1; text-align: center; padding: 24px; color: var(--text-secondary);">
+            Running automated health check...
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </main>
+
+  <div id="toast">Notification</div>
+
+  <script>
+    const svgFiles = [
+      { name: 'assets/hero.svg', title: 'Hero Banner', size: '138 KB', hasPhoto: true },
+      { name: 'assets/about-life.svg', title: 'About & Life Carousel', size: '10 KB', hasPhoto: false },
+      { name: 'assets/stack.svg', title: 'Tech Stack Planetary Orbit', size: '13 KB', hasPhoto: false },
+      { name: 'assets/id-dashboard.svg', title: 'Hanging ID Card Dashboard', size: '61 KB', hasPhoto: true },
+      { name: 'assets/connect.svg', title: 'Connect Banner & Pointing Gesture', size: '165 KB', hasPhoto: true }
+    ];
+
+    function showToast(msg) {
+      const toast = document.getElementById('toast');
+      toast.textContent = msg;
+      toast.style.display = 'block';
+      clearTimeout(window.toastTimer);
+      window.toastTimer = setTimeout(() => { toast.style.display = 'none'; }, 2400);
+    }
+
+    function switchView(viewName) {
+      document.querySelectorAll('.view-content').forEach(el => el.style.display = 'none');
+      document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
+
+      const target = document.getElementById(`view-${viewName}`);
+      if (target) target.style.display = 'block';
+
+      const idx = viewName === 'profile' ? 0 : (viewName === 'inspector' ? 1 : 2);
+      document.querySelectorAll('.tab-btn')[idx].classList.add('active');
+
+      if (viewName === 'diagnostics') {
+        runAutomatedAudit();
+      }
+    }
+
+    function reloadAll() {
+      const ts = Date.now();
+      const ids = ['p-hero', 'p-about', 'p-stack', 'p-id', 'p-connect', 'i-hero', 'i-about', 'i-stack', 'i-id', 'i-connect'];
+      ids.forEach(id => {
+        const el = document.getElementById(id);
+        if (el) {
+          const basePath = el.src.split('?')[0];
+          el.src = `${basePath}?v=1&t=${ts}`;
+        }
+      });
+      showToast('🔄 All animations restarted');
+    }
+
+    function scrubTimestamp(sec) {
+      reloadAll();
+      showToast(`⏱️ Reloaded at simulated timestamp ${sec}s`);
+    }
+
+    let reducedMotion = false;
+    function toggleReducedMotion() {
+      reducedMotion = !reducedMotion;
+      const btn = document.getElementById('motion-btn');
+      if (reducedMotion) {
+        document.body.classList.add('sim-reduced-motion');
+        btn.classList.add('btn-active');
+        btn.textContent = '♿ Motion: REDUCED';
+        showToast('♿ Reduced motion simulation active');
+      } else {
+        document.body.classList.remove('sim-reduced-motion');
+        btn.classList.remove('btn-active');
+        btn.textContent = '♿ Motion: ON';
+        showToast('⚡ Normal animations active');
+      }
+    }
+
+    const themes = ['default', 'dimmed', 'lights-out'];
+    let currentThemeIdx = 0;
+    function cycleTheme() {
+      currentThemeIdx = (currentThemeIdx + 1) % themes.length;
+      document.body.setAttribute('data-theme', themes[currentThemeIdx]);
+      showToast(`🌓 Theme set to: ${themes[currentThemeIdx]}`);
+    }
+
+    async function runAutomatedAudit() {
+      const grid = document.getElementById('audit-grid');
+      grid.innerHTML = '<div style="grid-column: 1 / -1; text-align: center; padding: 20px;">Auditing files...</div>';
+
+      let html = '';
+
+      for (const item of svgFiles) {
+        try {
+          const res = await fetch(`${item.name}?v=1`);
+          const text = await res.text();
+
+          const hasJS = /<script/i.test(text);
+          const hasFO = /foreignObject/i.test(text);
+          const hasExternal = /url\s*\((?!["']?data:|["']?#)/i.test(text) || /href="http/i.test(text);
+          const hasRM = /prefers-reduced-motion/i.test(text);
+          const hasValidSVG = text.trim().startsWith('<svg');
+          const hasViewBox = /viewBox="/.test(text);
+          const hasBase64 = item.hasPhoto ? /data:image\/png;base64,/.test(text) : true;
+
+          html += `
+            <div class="diag-box">
+              <h4>${item.name}</h4>
+              <div class="check-row">
+                <span>Valid SVG Root & ViewBox</span>
+                <span class="status-badge ${hasValidSVG && hasViewBox ? 'pass' : 'fail'}">${hasValidSVG && hasViewBox ? 'PASS' : 'FAIL'}</span>
+              </div>
+              <div class="check-row">
+                <span>Zero JavaScript (&lt;script&gt;)</span>
+                <span class="status-badge ${!hasJS ? 'pass' : 'fail'}">${!hasJS ? 'PASS' : 'FAIL'}</span>
+              </div>
+              <div class="check-row">
+                <span>Zero foreignObject</span>
+                <span class="status-badge ${!hasFO ? 'pass' : 'fail'}">${!hasFO ? 'PASS' : 'FAIL'}</span>
+              </div>
+              <div class="check-row">
+                <span>Zero External Requests</span>
+                <span class="status-badge ${!hasExternal ? 'pass' : 'fail'}">${!hasExternal ? 'PASS' : 'FAIL'}</span>
+              </div>
+              <div class="check-row">
+                <span>prefers-reduced-motion media query</span>
+                <span class="status-badge ${hasRM ? 'pass' : 'fail'}">${hasRM ? 'PASS' : 'FAIL'}</span>
+              </div>
+              <div class="check-row">
+                <span>Self-contained Base64 Portrait</span>
+                <span class="status-badge ${hasBase64 ? 'pass' : 'fail'}">${item.hasPhoto ? (hasBase64 ? 'PASS' : 'FAIL') : 'N/A'}</span>
+              </div>
+            </div>
+          `;
+        } catch (e) {
+          html += `
+            <div class="diag-box">
+              <h4>${item.name}</h4>
+              <p style="color: #f85149; font-size: 12px;">Failed to fetch file: ${e.message}</p>
+            </div>
+          `;
+        }
+      }
+
+      grid.innerHTML = html;
+    }
+
+    // Auto-run audit when page loads if diagnostics opened
+    window.addEventListener('DOMContentLoaded', () => {
+      // Warm up fetch
+    });
+  </script>
+</body>
+</html>
